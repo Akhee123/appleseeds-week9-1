@@ -29,4 +29,3 @@ function App() {
 
 export default App;
 
-// children: [{ path: "/update/:id", element: <UpdatePage /> }],
