@@ -1,30 +1,13 @@
-import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import RootLayout from "./pages/Root";
-import HomePage from "./pages/HomePage/HomePage";
-import ListPage from "./pages/ListPage/ListPage";
-import AddPage from "./pages/AddPage/AddPage";
-import UpdatePage from "./pages/UpdatePage/UpdatePage";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      { path: "", element: <HomePage /> },
-      { path: "addPage", element: <AddPage /> },
-      {
-        path: "listPage",
-        element: <ListPage />,
-        children: [{ path: "updatePage/:id", element: <UpdatePage /> }],
-      },
-    ],
-  },
-]);
+import './App.css'
 
 function App() {
-  return <RouterProvider router={router} />;
+
+
+  return (
+    <div className="App">
+      
+    </div>
+  )
 }
 
 export default App;
