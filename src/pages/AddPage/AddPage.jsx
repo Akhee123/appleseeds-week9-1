@@ -1,7 +1,15 @@
+import AddForm from "../../components/AddForm/AddForm";
+import { addData } from "../../scripts/api";
+
 function AddPage() {
+
+  function addItemHandler(item) {
+    addData(item);
+  }
+  
   return (
     <div>
-      <h1>This is Add Page</h1>
+      <AddForm addItem={addItemHandler} />
     </div>
   );
 }
