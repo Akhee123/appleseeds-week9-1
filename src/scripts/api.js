@@ -1,13 +1,13 @@
-const testURL = "https://63f9319e473885d837cafdd9.mockapi.io/shoes/";
+const url = "https://63f9319e473885d837cafdd9.mockapi.io/shoes/";
 
-export async function getData(url) {
+export async function getData() {
   const reponse = await fetch(url);
   const data = await reponse.json();
 
   return data;
 }
 
-export async function addData(url, data) {
+export async function addData(data) {
   const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +17,7 @@ export async function addData(url, data) {
   return response;
 }
 
-export async function updateData(url, index, data) {
+export async function updateData(index, data) {
   const response = await fetch(url + index, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -27,7 +27,7 @@ export async function updateData(url, index, data) {
   return response;
 }
 
-export async function deleteData(url, index) {
+export async function deleteData(index) {
   const response = await fetch(url, {
     method: "DELETE",
   });

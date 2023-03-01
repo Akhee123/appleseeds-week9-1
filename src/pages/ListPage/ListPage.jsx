@@ -3,7 +3,6 @@ import { getData } from "../../scripts/api.js";
 import ItemList from "../../components/Item/ItemList";
 
 function ListPage() {
-
   const [items, setItems] = useState([]);
 
   const fetchItemsHandler = useCallback(async () => {
@@ -13,15 +12,14 @@ function ListPage() {
 
   useEffect(() => {
     fetchItemsHandler();
-    console.log(items);
   }, [fetchItemsHandler]);
 
   return (
     <>
-    <button onClick={fetchItemsHandler}>Get Items</button>
-    <div className="item-list-page">
-      <ItemList items={items} />
-    </div>
+      <button onClick={fetchItemsHandler}>Get Items</button>
+      <div className="item-list-page">
+        <ItemList items={items} />
+      </div>
     </>
   );
 }
