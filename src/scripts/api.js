@@ -8,7 +8,7 @@ export async function getData() {
 }
 
 export async function getIndexData(index) {
-  const reponse = await fetch(url+ index);
+  const reponse = await fetch(url + index);
   const data = await reponse.json();
 
   return data;
@@ -35,7 +35,7 @@ export async function updateData(index, data) {
 }
 
 export async function deleteData(index) {
-  const response = await fetch(url, {
+  const response = await fetch(url + index, {
     method: "DELETE",
   });
 
