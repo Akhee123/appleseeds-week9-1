@@ -14,11 +14,8 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <HomePage /> },
       { path: "addPage", element: <AddPage /> },
-      {
-        path: "listPage",
-        element: <ListPage />,
-        children: [{ path: "updatePage/:id", element: <UpdatePage /> }],
-      },
+      { path: "listPage", element: <ListPage /> },
+      { path: "listPage/update/:itemId", element: <UpdatePage /> },
     ],
   },
 ]);
@@ -28,4 +25,3 @@ function App() {
 }
 
 export default App;
-

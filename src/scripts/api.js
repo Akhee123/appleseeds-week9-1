@@ -7,6 +7,13 @@ export async function getData() {
   return data;
 }
 
+export async function getIndexData(index) {
+  const reponse = await fetch(url+ index);
+  const data = await reponse.json();
+
+  return data;
+}
+
 export async function addData(data) {
   const response = await fetch(url, {
     method: "POST",

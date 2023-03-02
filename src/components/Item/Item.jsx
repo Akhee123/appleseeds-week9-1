@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './Item.module.css';
 
 function Item(props) {
@@ -7,6 +8,9 @@ function Item(props) {
       <div>
         <h1>{props.price}</h1>
         <p>{props.description}</p>
+        <div>
+          <Link to={`/listPage/update/${props.id}`}>Update</Link>
+        </div>
       </div>
     </div>
   );
