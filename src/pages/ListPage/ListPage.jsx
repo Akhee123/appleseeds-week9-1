@@ -1,6 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, createContext } from "react";
 import { getData } from "../../scripts/api.js";
 import ItemList from "../../components/Item/ItemList";
+
+export const ListContext = createContext();
 
 function ListPage() {
   const [items, setItems] = useState([]);
@@ -18,7 +20,9 @@ function ListPage() {
     <>
       <button onClick={fetchItemsHandler}>Get Items</button>
       <div className="item-list-page">
-        <ItemList items={items} />
+        <ListContext.Provider value={{items, setItems}}>
+          <ItemList items={items} />
+        </ListContext.Provider>
       </div>
     </>
   );

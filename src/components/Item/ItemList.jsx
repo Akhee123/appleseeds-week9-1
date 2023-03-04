@@ -1,5 +1,4 @@
 import Item from "./Item";
-import './ItemList.module.css';
 
 function ItemList(props) {
   return (

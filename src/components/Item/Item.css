@@ -1,0 +1,28 @@
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    border: 0 transparent;
+    border-radius: 25px;
+}
+
+img {
+    border-radius: inherit;
+}
+
+/* .item img{
+    width: 400px;
+} */
+
+.item-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

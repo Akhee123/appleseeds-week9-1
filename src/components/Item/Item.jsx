@@ -1,20 +1,27 @@
+import { ListContext } from "../../pages/ListPage/ListPage";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { deleteData } from "../../scripts/api";
-import './Item.module.css';
+import { deleteData, getData } from "../../scripts/api";
+import "./Item.css";
 
 function Item(props) {
+  const context = useContext(ListContext);
 
-  function deleteHandler() {
-    deleteData(props.id);
+  async function deleteHandler() {
+    await deleteData(props.id);
+    const data = await getData();
+    if (data.ok) {
+      context.setItems([data]);
+    }
   }
 
   return (
-    <div className='item'>
+    <div className="item">
       <img src={props.image} />
-      <div>
+      <div className="item-details">
         <h1>{props.price}</h1>
         <p>{props.description}</p>
-        <div>
+        <div className="item-options">
           <Link to={`/listPage/update/${props.id}`}>Update</Link>
           <a onClick={deleteHandler}>Delete Item</a>
         </div>
